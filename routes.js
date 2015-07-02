@@ -303,7 +303,7 @@ exports.initialize = function (app) {
 
   // stream one medium in WAV
   app.get('/medium/:id_medium/wav',
-    Authentication.middleware.isLoggedIn,
+    // Authentication.middleware.isLoggedIn,
     _.middleware.fExistsWithRights(mMedium, _.READ),
     Medium.streamWav);
 

@@ -307,6 +307,12 @@ exports.initialize = function (app) {
     _.middleware.fExistsWithRights(mMedium, _.READ),
     Medium.streamWav);
 
+  // stream one medium in MP3
+  app.get('/medium/:id_medium/mp3',
+    Authentication.middleware.isLoggedIn,
+    _.middleware.fExistsWithRights(mMedium, _.READ),
+    Medium.streamMp3);
+
   // LAYER
 
   // get all layers
